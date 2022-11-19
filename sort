@@ -31,7 +31,7 @@ void selectionsort(int arr[], int n){
     int min_index;
 
     for(int i=0;i<n-1;i++){
-        for(int j=i;j<n;j++){
+        for(int j=i+1;j<n;j++){
             if(arr[j]<arr[min_index])
             min_index = j;
         }
@@ -84,22 +84,9 @@ void menu(int arr[], int n){
 }
 
 int main(){
-    int n;
-    cout<<"Enter the size of the array\n";
-    cin>>n;
-    int *arr = new int(n);
-
-    cout<<"Enter the array elements"<<endl;
-    for(int i=0;i<n;i++){
-        cout<<"Enter the "<<i<<" th index: ";
-        cin>>arr[i];
-        cout<<endl;
-    }
-
-    cout<<"Array before sorting......."<<endl;
-    printarray(arr,n);
-    menu(arr,n);
-    printarray(arr,n);
+    int arr[] = {2,5,1,0,7};
+    menu(arr,5);
+    printarray(arr,5);
 
     return 0;
 }
